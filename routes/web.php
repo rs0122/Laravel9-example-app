@@ -20,5 +20,9 @@ Route::get('/', function () {
 Route::get('/sample', [\App\Http\Controllers\Sample\IndexController::class, 'show']);
 Route::get('/sample/{id}', [\App\Http\Controllers\Sample\IndexController::class, 'showId']);
 
-//シングルアクションコントローラ
-Route::get('/tweet', \App\Http\Controllers\Tweet\IndexController::class);
+//シングルアクションコントローラ(__invokeのマジックメソッド)
+Route::get('/tweet', \App\Http\Controllers\Tweet\IndexController::class)
+->name('tweet.index');
+
+Route::post('/tweet/create', \App\Http\Controllers\Tweet\CreateController::class)
+->name('tweet.create');
