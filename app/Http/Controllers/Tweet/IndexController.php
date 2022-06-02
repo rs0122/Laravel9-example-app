@@ -22,6 +22,8 @@ class IndexController extends Controller
         // $tweetService = new TweetService();
         // つぶやき一覧の取得
         $tweets = $tweetService->getTweets();
+        dump($tweets);
+        app(\App\Exceptions\Handler::class)->render(request(), throw new \Error('dump report.'));
         // orderByとall()->sortByDesc()はSQL時のソートかPHPコードでのソートかで大きく違う。SQLでソートする方が高速。
         // $tweets = Tweet::all()->sortByDesc('created_at');
         // ↓Laravel独自のヘルパー関数。(dump,dieの頭文字)

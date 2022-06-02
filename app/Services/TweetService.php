@@ -9,7 +9,7 @@ class TweetService
 {
     public function getTweets()
     {
-        return Tweet::orderby('created_at', 'DESC')->get();
+        return Tweet::with('images')->orderby('created_at', 'DESC')->get();
     }
 
     //自分のtweetかどうかをチェックするメソッド
