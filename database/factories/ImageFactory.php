@@ -21,9 +21,9 @@ class ImageFactory extends Factory
         if(!Storage::exists('public/images')) {
             Storage::makeDirectory('public/images');
         }
-
+        $this->faker->addProvider(new \Mmo\Faker\PicsumProvider($this->faker));
         return [
-            'name' => $this->faker->image(storage_path('app/public/images'), 640, 480, null, false)
+            'name' => $this->faker->picsum(storage_path('app/public/images'), 10, 10, false)
         ];
     }
 }

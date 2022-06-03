@@ -30,5 +30,7 @@ class TweetsSeeder extends Seeder
                 $tweet->images()->attach($image->id)
             )
         );
+
+        // Image::factory()->count(2)->create();
     }
 }
