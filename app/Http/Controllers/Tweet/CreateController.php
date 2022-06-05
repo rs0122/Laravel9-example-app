@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 //バリデーションの追加
 use App\Http\Requests\Tweet\CreateRequest;
 use App\Models\Tweet;
-use App\Service\TweetService;
+use App\Services\TweetService;
 
 class CreateController extends Controller
 {

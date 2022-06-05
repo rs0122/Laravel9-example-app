@@ -39,7 +39,7 @@ class TweetService
     {
         DB::transaction(function() use ($userId, $content, $images) {
             $tweet = new Tweet;
-            $tweet->user_id = $user_id;
+            $tweet->user_id = $userId;
             $tweet->content = $content;
             $tweet->save();
             foreach($images as $image) {
