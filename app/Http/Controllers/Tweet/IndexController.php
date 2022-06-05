@@ -20,8 +20,10 @@ class IndexController extends Controller
         // $tweets = Tweet::orderBy('created_at', 'DESC')->get();
         // TweetServiceのインスタンスを作成←依存性の注入により削除
         // $tweetService = new TweetService();
+
         // つぶやき一覧の取得
         $tweets = $tweetService->getTweets();
+
         // orderByとall()->sortByDesc()はSQL時のソートかPHPコードでのソートかで大きく違う。SQLでソートする方が高速。
         // $tweets = Tweet::all()->sortByDesc('created_at');
         // ↓Laravel独自のヘルパー関数。(dump,dieの頭文字)
