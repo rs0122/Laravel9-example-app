@@ -25,8 +25,8 @@ class TweetsSeeder extends Seeder
             // 'updated_at' => now()
         // ]);
 
-        Tweet::factory()->count(10)->create()->each(fn($tweet) =>
-            Image::factory()->count(4)->create()->each(fn($image) =>
+        Tweet::factory()->count(5)->create()->each(fn($tweet) =>
+            Image::factory()->count(2)->create()->each(fn($image) =>
                 $tweet->images()->attach($image->id)
             )
         );
